@@ -1,3 +1,8 @@
+/*
+   * Base Simpel
+   * Created By Dii Coders
+*/
+
 module.exports = async (client, m) => {
 try {
 const body = (

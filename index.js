@@ -1,3 +1,8 @@
+/*
+   * Base Simpel
+   * Created By Dii Coders
+*/
+
 const {
   makeWASocket,
   jidDecode,
