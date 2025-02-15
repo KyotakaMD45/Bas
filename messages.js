@@ -61,12 +61,25 @@ module.exports = Raol404 = async (Raol404, m, chatUpdate, store) => {
         const qmsg = (quoted.msg || quoted)
         const isMedia = /image|video|sticker|audio/.test(mime)
 
+        // Waktu Code Here
+        const time2 = moment().tz("Asia/Jakarta").format("HH:mm:ss")
+        var ucapanWaktu = ''
+        if (time2 < "19:00:00") { ucapanWaktu = "Selamat Malam🌃" }
+        if (time2 < "15:00:00") { ucapanWaktu = "Selamat Sore🌄" }
+        if (time2 < "11:00:00") { ucapanWaktu = "Selamat Siang🏞️" }
+        if (time2 < "06:00:00") { ucapanWaktu = "Selamat Pagi🏙️" }
+        if (time2 < "23:59:00") { ucapanWaktu = "Selamat Subuh🌆" }
+        const wib = moment(Date.now()).tz("Asia/Jakarta").locale("id").format("HH:mm:ss z")
+        const wita = moment(Date.now()).tz("Asia/Makassar").locale("id").format("HH:mm:ss z")
+        const wit = moment(Date.now()).tz("Asia/Jayapura").locale("id").format("HH:mm:ss z")
+        const salam2 = moment(Date.now()).tz("Asia/Jakarta").locale("id").format("a")
+
         // User
         var isAuthor = global.ownNumb.replace(/[^0-9]/g, '').includes(m.sender.split("@")[0])
         const botNumber = await Raol404.decodeJid(Raol404.user.id)
         const globalelit = `${global.ownNumb}@s.whatsapp.net`
         const isOwner = globalelit.includes(m.sender)
-        const itsMe = m.sender == botNumber ? true : false
+        const itsMe = m.sender == botNumber ? true : false 
         const isCreator = [botNumber, ...global.ownNumb].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 
         // Group
