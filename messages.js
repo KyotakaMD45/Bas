@@ -28,7 +28,7 @@ const upchUsage = require('./lib/database/upchUsage.json') || {}
 
 const _cmd = JSON.parse(fs.readFileSync('./lib/database/command.json'))
 const _cmdUser = JSON.parse(fs.readFileSync('./lib/database/commandUser.json'))
-const { addCountCmd, getPosiCmdUser, addCountCmdUser } = require('./temporary/helpers/command')
+const { addCountCmd, getPosiCmdUser, addCountCmdUser } = require('./daemon/helpers/command')
 
 // Base
 module.exports = Raol404 = async (Raol404, m, chatUpdate, store) => {
